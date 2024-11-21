@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SkillTracker/static/css/main.e6c13ad2.css",
+    "main.js": "/SkillTracker/static/js/main.2025749d.js",
+    "static/js/453.252b479b.chunk.js": "/SkillTracker/static/js/453.252b479b.chunk.js",
+    "index.html": "/SkillTracker/index.html",
+    "main.e6c13ad2.css.map": "/SkillTracker/static/css/main.e6c13ad2.css.map",
+    "main.2025749d.js.map": "/SkillTracker/static/js/main.2025749d.js.map",
+    "453.252b479b.chunk.js.map": "/SkillTracker/static/js/453.252b479b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.2025749d.js"
+  ]
+}
