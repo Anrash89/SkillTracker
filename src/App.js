@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import TrackChangesIcon from "@mui/icons-material/TrackChanges";
+import SkillTracker from "./components/SkillTracker";
+import TrackerActions from "./components/TrackerActions";
 
 function App() {
+  const [currentTab, setCurrentTab] = useState(0); // Состояние для отслеживания текущей вкладки
+
+  const renderTabContent = () => {
+    switch (currentTab) {
+      case 0:
+        return <SkillTracker />; // Главная страница с навыками
+      case 1:
+        return <TrackerActions />; // Трекер прокачки
+      default:
+        return <SkillTracker />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+      {/* Контент текущей вкладки */}
+      <Box sx={{ flex: 1, overflow: "auto" }}>{renderTabContent()}</Box>
+
+      {/* Нижняя панель навигации */}
+      <BottomNavigation
+        value={currentTab}
+        onChange={(event, newValue) => setCurrentTab(newValue)}
+        showLabels
+        sx={{ backgroundColor: "#f5f5f5", borderTop: "1px solid #ddd" }}
+      >
+        <BottomNavigationAction label="Главная" icon={<HomeIcon />} />
+        <BottomNavigationAction label="Трекер прокачки" icon={<TrackChangesIcon />} />
+      </BottomNavigation>
+    </Box>
   );
 }
 
